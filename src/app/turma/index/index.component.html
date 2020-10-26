@@ -35,7 +35,7 @@
 
   <table class="table table-bordered">
     <tr>
-      <th>Escola</th>
+      <th class="d-none d-sm-table-cell">Escola</th>
       <th>Ano</th>
       <th>Curso</th>
       <th>Serie</th>
@@ -43,7 +43,7 @@
       <th width="220px">Ações</th>
     </tr>
     <tr *ngFor="let turma of turmas">
-      <td>{{ turma.escolaNome }}</td>
+      <td class="d-none d-sm-table-cell">{{ turma.escolaNome }}</td>
       <td>{{ turma.ano }}</td>
       <td>{{ turma.curso }}</td>
       <td>{{ turma.serie }}</td>
