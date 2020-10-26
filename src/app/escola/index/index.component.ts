@@ -21,9 +21,12 @@ export class IndexComponent implements OnInit {
   }
 
   excluirEscola(id){
+    if (!confirm("Tem certeza que deseja excluir o registro?")) {
+      return;
+    }
+
     this.escolaService.excluir(id).subscribe(res => {
-         this.escolas = this.escolas.filter(item => item.id !== id);
-         console.log('Escola excluida com sucesso!');
+        this.escolas = this.escolas.filter(item => item.id !== id);
     })
   }
 

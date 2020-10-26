@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TurmaService } from '../turma.service';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl, Validators} from '@angular/forms';
+import { FormGroup, FormControl, Validators, ReactiveFormsModule} from '@angular/forms';
 import { Escola } from '../../escola/escola';
 import { EscolaService } from '../../escola/escola.service';
 
@@ -43,11 +43,14 @@ export class NovoComponent implements OnInit {
 
   onEscolaSelecionada(event){  
     const value = event.target.value;
-   this.escolaSelecionada = value;
+   this.escolaSelecionada = value;   
 }
     
   salvar(){
-    console.log(this.form.value);
+    if(this.escolaSelecionada==''){
+      alert('Você precisa selecionar/cadastrar uma escola primeiro');
+      return;
+    }
     this.turmaService.inserir({...this.form.value, escolaId:this.escolaSelecionada}).subscribe(res => {
          this.router.navigateByUrl('turma/index');
     })

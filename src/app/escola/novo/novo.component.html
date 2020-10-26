@@ -6,7 +6,7 @@
         <div class="form-group">
             <label for="nome">Nome:</label>
             <input formControlName="nome" id="nome" type="text" class="form-control">
-            <div *ngIf="f.nome.touched && f.nome.invalid" class="alert alert-danger">
+            <div *ngIf="f.nome.touched && f.nome.invalid" class="alert alert-danger mt-2">
                 <div *ngIf="f.nome.errors.required">Nome é obrigatório.</div>
             </div>
         </div>
@@ -14,7 +14,7 @@
         <div class="form-group">
             <label for="numeroInep">Número INEP</label>
             <input formControlName="numeroInep" id="numeroInep" type="number" class="form-control">
-            <div *ngIf="f.numeroInep.touched && f.numeroInep.invalid" class="alert alert-danger">
+            <div *ngIf="f.numeroInep.touched && f.numeroInep.invalid" class="alert alert-danger mt-2">
                 <div *ngIf="f.numeroInep.errors.required">Número INEP é obrigatório.</div>
             </div>
         </div>

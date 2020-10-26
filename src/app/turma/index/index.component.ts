@@ -32,13 +32,17 @@ export class IndexComponent implements OnInit {
   }
 
   excluirTurma(id){
+    if (!confirm("Tem certeza que deseja excluir o registro?")) {
+      return;
+    }
+
     this.turmaService.excluir(id).subscribe(res => {
          this.turmas = this.turmas.filter(item => item.id !== id);
     })
   }
 
-    onEscolaSelecionada(event){  
-      const value = event.target.value;
+  onEscolaSelecionada(event){  
+    const value = event.target.value;
     this.escolaSelecionada = value;
   }
 

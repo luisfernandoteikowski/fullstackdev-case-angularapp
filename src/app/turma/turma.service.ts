@@ -1,17 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
    
-import {  Observable, throwError } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { Turma } from './turma';
+import { API_URL } from '../config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TurmaService {
 
-  private apiURL = "https://localhost:5001/api";
+  private apiURL = API_URL;
    
   httpOptions = {
     headers: new HttpHeaders({

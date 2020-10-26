@@ -9,7 +9,7 @@
                 <option *ngFor="let escola of escolas" [value]="escola.id">{{escola.nome}}
                 </option>
             </select>
-            <div *ngIf="f.escolaId.touched && f.escolaId.invalid" class="alert alert-danger">
+            <div *ngIf="f.escolaId.touched && f.escolaId.invalid" class="alert alert-danger mt-2">
                 <div *ngIf="f.escolaId.errors.required">Escola é obrigatório.</div>
             </div>
         </div>
@@ -17,7 +17,7 @@
         <div class="form-group">
             <label for="ano">Ano</label>
             <input formControlName="ano" id="ano" type="number" class="form-control">
-            <div *ngIf="f.ano.touched && f.ano.invalid" class="alert alert-danger">
+            <div *ngIf="f.ano.touched && f.ano.invalid" class="alert alert-danger mt-2">
                 <div *ngIf="f.ano.errors.required">Ano é obrigatório.</div>
             </div>
         </div>
@@ -25,7 +25,7 @@
         <div class="form-group">
             <label for="curso">Curso:</label>
             <input formControlName="curso" id="curso" type="text" class="form-control">
-            <div *ngIf="f.curso.touched && f.curso.invalid" class="alert alert-danger">
+            <div *ngIf="f.curso.touched && f.curso.invalid" class="alert alert-danger mt-2">
                 <div *ngIf="f.curso.errors.required">Curso é obrigatório.</div>
             </div>
         </div>

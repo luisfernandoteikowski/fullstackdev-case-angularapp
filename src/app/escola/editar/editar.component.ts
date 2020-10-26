@@ -40,7 +40,6 @@ export class EditarComponent implements OnInit {
   salvar(){
     console.log(this.form.value);
     this.escolaService.atualizar(this.id, this.form.value).subscribe(res => {
-         console.log('Escola atualizada com sucesso!');
          this.router.navigateByUrl('escola/index');
     })
   }

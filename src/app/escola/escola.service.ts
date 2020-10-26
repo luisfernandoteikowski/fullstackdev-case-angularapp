@@ -5,13 +5,14 @@ import {  Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { Escola } from './escola';
+import { API_URL } from '../config';
 
 @Injectable({
   providedIn: 'root'
 })
 export class EscolaService {
   
-  private apiURL = "https://localhost:5001/api";
+  private apiURL = API_URL;
    
   httpOptions = {
     headers: new HttpHeaders({
