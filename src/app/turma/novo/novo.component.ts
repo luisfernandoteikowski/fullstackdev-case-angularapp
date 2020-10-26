@@ -43,8 +43,8 @@ export class NovoComponent implements OnInit {
 
   onEscolaSelecionada(event){  
     const value = event.target.value;
-   this.escolaSelecionada = value;   
-}
+    this.escolaSelecionada = value;   
+  }
     
   salvar(){
     if(this.escolaSelecionada==''){

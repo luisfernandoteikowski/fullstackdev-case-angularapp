@@ -9,17 +9,15 @@ import { EscolaModule } from './escola/escola.module';
 import { TurmaModule } from './turma/turma.module';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     EscolaModule,
     HttpClientModule,
-    TurmaModule
+    TurmaModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

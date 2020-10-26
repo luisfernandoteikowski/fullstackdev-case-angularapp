@@ -1,20 +1,36 @@
 <div class="container">
-    <h3>Lista de Escolas</h3>
+  <h3>Lista de Escolas</h3>
 
-    <a href="#" routerLink="/escola/novo/" class="btn btn-success float-right mb-2">Novo</a>
-    <table class="table table-bordered">
-        <tr>
-            <th>Nome</th>
-            <th>Numero INEP</th>
-            <th width="220px">Ações</th>
-        </tr>
-        <tr *ngFor="let escola of escolas">
-            <td>{{ escola.nome }}</td>
-            <td>{{ escola.numeroInep }}</td>
-            <td>
-                <a href="#" [routerLink]="['/escola/', escola.id, 'editar']" class="btn btn-primary mr-1">Editar</a>
-                <button type="button" (click)="excluirEscola(escola.id)" class="btn btn-danger">Excluir</button>
-            </td>
-        </tr>
-    </table>
+  <a
+    href="#"
+    routerLink="/escola/novo/"
+    class="btn btn-success float-right mb-2"
+    >Novo</a
+  >
+  <table class="table table-bordered">
+    <tr>
+      <th>Nome</th>
+      <th>Numero INEP</th>
+      <th width="220px">Ações</th>
+    </tr>
+    <tr *ngFor="let escola of escolas">
+      <td>{{ escola.nome }}</td>
+      <td>{{ escola.numeroInep }}</td>
+      <td>
+        <a
+          href="#"
+          [routerLink]="['/escola/', escola.id, 'editar']"
+          class="btn btn-primary mr-1"
+          >Editar</a
+        >
+        <button
+          type="button"
+          (click)="excluirEscola(escola.id)"
+          class="btn btn-danger"
+        >
+          Excluir
+        </button>
+      </td>
+    </tr>
+  </table>
 </div>

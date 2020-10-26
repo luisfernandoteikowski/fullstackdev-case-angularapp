@@ -6,37 +6,40 @@ import { Turma } from '../turma';
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  styleUrls: ['./index.component.css'],
 })
-
 export class IndexComponent implements OnInit {
   escolaSelecionada = '';
   escolas: Escola[] = [];
   turmas: Turma[] = [];
-  constructor(public escolaService: EscolaService, public turmaService: TurmaService) { }
+  constructor(
+    public escolaService: EscolaService,
+    public turmaService: TurmaService
+  ) {}
 
   ngOnInit(): void {
-    this.escolaService.listarTodos().subscribe((data: Escola[])=>{
+    this.escolaService.listarTodos().subscribe((data: Escola[]) => {
       this.escolas = data;
       this.escolaSelecionada = this.escolas[0].id;
-    })
+    });
   }
 
-  listarTurmasDaEscola(){
-    this.turmaService.listarTurmasDaEscola(this.escolaSelecionada).subscribe((data: Turma[])=>{
-      this.turmas = data;
-    })
+  listarTurmasDaEscola() {
+    this.turmaService
+      .listarTurmasDaEscola(this.escolaSelecionada)
+      .subscribe((data: Turma[]) => {
+        this.turmas = data;
+      });
   }
 
-  excluirTurma(id){
-    this.escolaService.excluir(id).subscribe(res => {
-         this.turmas = this.turmas.filter(item => item.id !== id);
-    })
+  excluirTurma(id) {
+    this.escolaService.excluir(id).subscribe((res) => {
+      this.turmas = this.turmas.filter((item) => item.id !== id);
+    });
   }
 
-  onEscolaSelecionada(event){  
+  onEscolaSelecionada(event) {
     const value = event.target.value;
-   this.escolaSelecionada = value;
-}
-
+    this.escolaSelecionada = value;
+  }
 }

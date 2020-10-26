@@ -5,29 +5,25 @@ import { Escola } from '../escola';
 @Component({
   selector: 'app-index',
   templateUrl: './index.component.html',
-  styleUrls: ['./index.component.css']
+  styleUrls: ['./index.component.css'],
 })
 export class IndexComponent implements OnInit {
+  escolas: Escola[] = [];
 
-  escolas: Escola[]=[];
-
-  constructor(public escolaService: EscolaService) { }
+  constructor(public escolaService: EscolaService) {}
 
   ngOnInit(): void {
-    this.escolaService.listarTodos().subscribe((data: Escola[])=>{
+    this.escolaService.listarTodos().subscribe((data: Escola[]) => {
       this.escolas = data;
       console.log(this.escolas);
-    })
+    });
   }
-
-  excluirEscola(id){
-    if (!confirm("Tem certeza que deseja excluir o registro?")) {
+  excluirEscola(id) {
+    if (!confirm('Tem certeza que deseja excluir o registro?')) {
       return;
     }
-
-    this.escolaService.excluir(id).subscribe(res => {
-        this.escolas = this.escolas.filter(item => item.id !== id);
-    })
+    this.escolaService.excluir(id).subscribe((res) => {
+      this.escolas = this.escolas.filter((item) => item.id !== id);
+    });
   }
-
 }
