@@ -64,7 +64,7 @@
       />
       <div
         *ngIf="f.serie.touched && f.serie.invalid"
-        class="alert alert-danger"
+        class="alert alert-danger mt-2"
       >
         <div *ngIf="f.serie.errors.required">Série é obrigatória.</div>
       </div>
@@ -78,7 +78,10 @@
         type="text"
         class="form-control"
       />
-      <div *ngIf="f.nome.touched && f.nome.invalid" class="alert alert-danger">
+      <div
+        *ngIf="f.nome.touched && f.nome.invalid"
+        class="alert alert-danger mt-2"
+      >
         <div *ngIf="f.nome.errors.required">Nome é obrigatório.</div>
       </div>
     </div>
