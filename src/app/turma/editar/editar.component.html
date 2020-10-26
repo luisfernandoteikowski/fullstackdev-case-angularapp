@@ -1,0 +1,53 @@
+<div class="container">
+    <h3>Editar turma</h3>
+
+    <form [formGroup]="form" (ngSubmit)="salvar()">
+
+        <div class="form-group">
+            <label for="escolaId">Escola</label>
+            <select class="custom-select" name="escolaId" id="escolaId" disabled>
+                <option *ngFor="let escola of escolas" [value]="escola.id" [selected]="escolaSelecionada==escola.id">
+                    {{escola.nome}}
+                </option>
+            </select>
+            <div *ngIf="f.escolaId.touched && f.escolaId.invalid" class="alert alert-danger">
+                <div *ngIf="f.escolaId.errors.required">Escola é obrigatório.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="ano">Ano</label>
+            <input formControlName="ano" id="ano" type="number" class="form-control" [(ngModel)]="turma.ano">
+            <div *ngIf="f.ano.touched && f.ano.invalid" class="alert alert-danger">
+                <div *ngIf="f.ano.errors.required">Ano é obrigatório.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="curso">Curso:</label>
+            <input formControlName="curso" id="curso" type="text" class="form-control" [(ngModel)]="turma.curso">
+            <div *ngIf="f.curso.touched && f.curso.invalid" class="alert alert-danger">
+                <div *ngIf="f.curso.errors.required">Curso é obrigatório.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="serie">Série:</label>
+            <input formControlName="serie" id="serie" type="text" class="form-control" [(ngModel)]="turma.serie">
+            <div *ngIf="f.serie.touched && f.serie.invalid" class="alert alert-danger">
+                <div *ngIf="f.serie.errors.required">Série é obrigatória.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input formControlName="nome" id="nome" type="text" class="form-control" [(ngModel)]="turma.nome">
+            <div *ngIf="f.nome.touched && f.nome.invalid" class="alert alert-danger">
+                <div *ngIf="f.nome.errors.required">Nome é obrigatório.</div>
+            </div>
+        </div>
+
+        <a href="#" routerLink="/turma/index" class="btn btn-danger mr-1">Cancelar</a>
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Salvar</button>
+    </form>
+</div>

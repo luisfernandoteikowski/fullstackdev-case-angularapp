@@ -11,7 +11,7 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
 export class NovoComponent implements OnInit {
   
   form: FormGroup;
-
+  
   constructor(
     public escolaService: EscolaService,
     private router: Router

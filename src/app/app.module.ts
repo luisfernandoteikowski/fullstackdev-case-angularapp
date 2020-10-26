@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { EscolaModule } from './escola/escola.module';
+import { TurmaModule } from './turma/turma.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { EscolaModule } from './escola/escola.module';
     BrowserModule,
     AppRoutingModule,
     EscolaModule,
-    HttpClientModule
+    HttpClientModule,
+    TurmaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
