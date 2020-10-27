@@ -5,13 +5,13 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { Turma } from './turma';
-import { API_URL } from '../config';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TurmaService {
-  private apiURL = API_URL;
+  private apiURL = environment.apiURL;
 
   httpOptions = {
     headers: new HttpHeaders({
