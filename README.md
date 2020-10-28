@@ -33,7 +33,7 @@ docker build -t gerenciadorescolar-web .
 docker-compose up -d
 ```
 
-- Feito isto a API da aplicação sobe em localhost porta 8080, caso queira alterar a porta, alterar o docker-compose.yml.
+- Feito isto a aplicação sobe em localhost porta 8080, caso queira alterar a porta, alterar o docker-compose.yml.
 - Para acessar a aplicação: http://localhost:8080
 - OBS: Para aplicação funcionar corretamente, é necessário criar as imagens para os containers do [backend](https://github.com/luisfernandoteikowski/fullstackdev-case).
 
